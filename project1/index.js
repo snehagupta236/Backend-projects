@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 const Path = require('path');
 const fs = require('fs');
 const { log } = require('console');
@@ -45,7 +46,6 @@ app.post('/create', (req,res)=>{
 })
 
 
-app.listen(3000, ()=>{
-  console.log("server is running");
-  
-})
+app.listen(PORT, ()=>{
+  console.log("server is running on port " + PORT);
+});
